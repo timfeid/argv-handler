@@ -1,0 +1,22 @@
+{
+  "name": "console-command",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/command.js",
+  "bin": {
+    "console": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timfeid/console-command.git"
+  },
+  "author": "Tim Feid <tim@timfeid.com> (http://www.timfeid.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timfeid/console-command/issues"
+  },
+  "homepage": "https://github.com/timfeid/console-command#readme"
+}
