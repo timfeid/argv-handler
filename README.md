@@ -20,12 +20,12 @@ command.signature([
 ]).handle(pizza)
 ```
 
-`$ console today -p -pineapples`
+`$ console -p --pineapple today`
 
 returns
 ```
 Peppers: true
-Pineapples: false
+Pineapples: true
 BBQ Sauce: false
 Cheese: mozz
 Time of delivery: today
