@@ -4,9 +4,9 @@ var tap = require('tap')
 , argument1 = 'pizza-man'
 , description = 'this is a description'
 , argumentDefaultValue = '123321'
-, option1 = '--peppers'
-, option1Shortcut = 'p'
-, option1Description = 'example@email.com'
+, option1 = '--extract-destination'
+, option1Shortcut = 'e'
+, option1Description = 'extract destination'
 , optionDefaultValue = './path/to/something'
 , option
 
@@ -35,7 +35,7 @@ test('argument without default value', function (t) {
 
 test('argument with default value', function (t) {
   signature.set([
-    argument1 + '=' + argumentDefaultValue
+    argument1 + ' = ' + argumentDefaultValue
   ])
 
   argument = signature.args[argument1]
@@ -72,7 +72,7 @@ test('argument with description', function (t) {
 
 test('argument with description', function (t) {
   signature.set([
-    argument1 + '=' + argumentDefaultValue + ' : ' + description
+    argument1 + ' = ' + argumentDefaultValue + ' : ' + description
   ])
 
   argument = signature.args[argument1]
@@ -160,7 +160,7 @@ test('switch option with shortcut and description', function (t) {
 
 test('value option', function (t) {
   signature.set([
-    '--' + option1 + '='
+    '--' + option1 + ' = '
   ])
 
   option = signature.options[option1]
@@ -177,7 +177,7 @@ test('value option', function (t) {
 
 test('value option with default value', function (t) {
   signature.set([
-    '--' + option1 + '=' + optionDefaultValue
+    '--' + option1 + ' = ' + optionDefaultValue
   ])
 
   option = signature.options[option1]
@@ -194,7 +194,7 @@ test('value option with default value', function (t) {
 
 test('value option with default value and description', function (t) {
   signature.set([
-    '--' + option1 + '=' + optionDefaultValue + ' : ' + option1Description
+    '--' + option1 + ' = ' + optionDefaultValue + ' : ' + option1Description
   ])
 
   option = signature.options[option1]
@@ -212,7 +212,7 @@ test('value option with default value and description', function (t) {
 
 test('value option & shortcut with', function (t) {
   signature.set([
-    '--' + option1 + ' | ' + option1Shortcut + '='
+    '--' + option1 + ' | ' + option1Shortcut + ' = '
   ])
 
   option = signature.options[option1]
@@ -229,7 +229,7 @@ test('value option & shortcut with', function (t) {
 
 test('value option & shortcut with default value with', function (t) {
   signature.set([
-    '--' + option1 + ' | ' + option1Shortcut + '=' + optionDefaultValue
+    '--' + option1 + ' | ' + option1Shortcut + ' = ' + optionDefaultValue
   ])
 
   option = signature.options[option1]
@@ -246,7 +246,7 @@ test('value option & shortcut with default value with', function (t) {
 
 test('value option & shortcut with default value and description with', function (t) {
   signature.set([
-    '--' + option1 + ' | ' + option1Shortcut + '=' + optionDefaultValue + ' : ' + option1Description
+    '--' + option1 + ' | ' + option1Shortcut + ' = ' + optionDefaultValue + ' : ' + option1Description
   ])
 
   option = signature.options[option1]
