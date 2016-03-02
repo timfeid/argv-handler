@@ -1,11 +1,19 @@
 #!/usr/bin/env node
 
 var Command = require('./lib/command')
-  , Commands = require('./lib/commands')
-  , commands = new Commands([
-      new Command('user {user_id} {--opt|o= w at the eff : waaaat}', function () {
-        console.log(this.argument('user_id'));
-      })
-    ])
+  , command = new Command([
+        '{time-of-delivery=tomorrow}',
+        '{--peppers|p : peppers on that?}',
+        '{--pineapple|P : pineapples on that?}',
+        '{--bbq-sauce : bbq sauce on that?}',
+        '{--cheese|c= mozz : type of cheese}'
+    ], function () {
+    console.log("PEPS? ", this.option('peppers'))
+    console.log("PINES? ", this.option('pineapple'))
+    console.log("BBQ? ", this.option('bbq-sauce'))
+    console.log("CHEESE? ", this.option('cheese'))
+    console.log("TIME? ", this.argument('time-of-delivery'))
+    console.log(this.help())
+  })
 
-commands.handle()
+command.handle()
