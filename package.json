@@ -1,7 +1,7 @@
 {
-  "name": "console-command",
-  "version": "0.0.1",
-  "description": "",
+  "name": "mandator",
+  "version": "0.0.2",
+  "description": "Mandate commands",
   "main": "lib/command.js",
   "bin": {
     "console": "./index.js"
@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/timfeid/console-command.git"
+    "url": "git+https://github.com/timfeid/mandator.git"
   },
   "author": "Tim Feid <tim@timfeid.com> (http://www.timfeid.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/timfeid/console-command/issues"
+    "url": "https://github.com/timfeid/mandator/issues"
   },
-  "homepage": "https://github.com/timfeid/console-command#readme"
+  "homepage": "https://github.com/timfeid/mandator#readme"
 }
