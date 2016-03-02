@@ -7,7 +7,7 @@
     "console": "./index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tap test/"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/timfeid/mandator/issues"
   },
-  "homepage": "https://github.com/timfeid/mandator#readme"
+  "homepage": "https://github.com/timfeid/mandator#readme",
+  "devDependencies": {
+    "tap": "^5.7.0"
+  }
 }
