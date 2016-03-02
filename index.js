@@ -2,7 +2,7 @@
 
 var Command = require('./lib/command')
   , command = new Command([
-        '{time-of-delivery=tomorrow}',
+        '{time-of-delivery}',
         '{--peppers|p : peppers on that?}',
         '{--pineapple|P : pineapples on that?}',
         '{--bbq-sauce : bbq sauce on that?}',
@@ -13,7 +13,6 @@ var Command = require('./lib/command')
     console.log("BBQ? ", this.option('bbq-sauce'))
     console.log("CHEESE? ", this.option('cheese'))
     console.log("TIME? ", this.argument('time-of-delivery'))
-    console.log(this.help())
   })
 
 command.handle()
