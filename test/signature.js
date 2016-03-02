@@ -126,7 +126,7 @@ test('switch option with description', function (t) {
 
 test('switch option with shortcut', function (t) {
   signature.set([
-    '--' + option1 + '|' + option1Shortcut
+    '--' + option1 + ' | ' + option1Shortcut
   ])
 
   option = signature.options[option1]
@@ -143,7 +143,7 @@ test('switch option with shortcut', function (t) {
 
 test('switch option with shortcut and description', function (t) {
   signature.set([
-    '--' + option1 + '|' + option1Shortcut + ' : ' + option1Description
+    '--' + option1 + ' | ' + option1Shortcut + ' : ' + option1Description
   ])
 
   option = signature.options[option1]
@@ -212,7 +212,7 @@ test('value option with default value and description', function (t) {
 
 test('value option & shortcut with', function (t) {
   signature.set([
-    '--' + option1 + '|' + option1Shortcut + '='
+    '--' + option1 + ' | ' + option1Shortcut + '='
   ])
 
   option = signature.options[option1]
@@ -229,7 +229,7 @@ test('value option & shortcut with', function (t) {
 
 test('value option & shortcut with default value with', function (t) {
   signature.set([
-    '--' + option1 + '|' + option1Shortcut + '=' + optionDefaultValue
+    '--' + option1 + ' | ' + option1Shortcut + '=' + optionDefaultValue
   ])
 
   option = signature.options[option1]
@@ -246,7 +246,7 @@ test('value option & shortcut with default value with', function (t) {
 
 test('value option & shortcut with default value and description with', function (t) {
   signature.set([
-    '--' + option1 + '|' + option1Shortcut + '=' + optionDefaultValue + ' : ' + option1Description
+    '--' + option1 + ' | ' + option1Shortcut + '=' + optionDefaultValue + ' : ' + option1Description
   ])
 
   option = signature.options[option1]
