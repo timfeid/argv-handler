@@ -21,13 +21,15 @@ test('argument without default value', function (t) {
     argument1
   ])
 
-  t.type(signature.args[argument1], 'object')
-  t.equal(signature.args[argument1].name, argument1)
-  t.type(signature.args[argument1].value, 'undefined')
-  t.type(signature.args[argument1].default, 'undefined')
-  t.type(signature.args[argument1].description, 'string')
-  t.equal(signature.args[argument1].description, '')
-  t.equal(signature.args[argument1].position, 0)
+  argument = signature.args[argument1]
+
+  t.type(argument, 'object')
+  t.equal(argument.name, argument1)
+  t.type(argument.value, 'undefined')
+  t.type(argument.default, 'undefined')
+  t.type(argument.description, 'string')
+  t.equal(argument.description, '')
+  t.equal(argument.position, 0)
   t.end()
 })
 
@@ -36,15 +38,17 @@ test('argument with default value', function (t) {
     argument1 + '=' + argumentDefaultValue
   ])
 
-  t.type(signature.args[argument1], 'object')
-  t.equal(signature.args[argument1].name, argument1)
-  t.type(signature.args[argument1].value, 'string')
-  t.type(signature.args[argument1].default, 'string')
-  t.type(signature.args[argument1].description, 'string')
-  t.equal(signature.args[argument1].description, '')
-  t.equal(signature.args[argument1].position, 0)
+  argument = signature.args[argument1]
 
-  t.equal(signature.args[argument1].default, argumentDefaultValue)
+  t.type(argument, 'object')
+  t.equal(argument.name, argument1)
+  t.type(argument.value, 'string')
+  t.type(argument.default, 'string')
+  t.type(argument.description, 'string')
+  t.equal(argument.description, '')
+  t.equal(argument.position, 0)
+
+  t.equal(argument.default, argumentDefaultValue)
 
   t.end()
 })
@@ -54,13 +58,15 @@ test('argument with description', function (t) {
     argument1 + ' : ' + description
   ])
 
-  t.type(signature.args[argument1], 'object')
-  t.equal(signature.args[argument1].name, argument1)
-  t.type(signature.args[argument1].value, 'undefined')
-  t.type(signature.args[argument1].default, 'undefined')
-  t.type(signature.args[argument1].description, 'string')
-  t.equal(signature.args[argument1].description, description)
-  t.equal(signature.args[argument1].position, 0)
+  argument = signature.args[argument1]
+
+  t.type(argument, 'object')
+  t.equal(argument.name, argument1)
+  t.type(argument.value, 'undefined')
+  t.type(argument.default, 'undefined')
+  t.type(argument.description, 'string')
+  t.equal(argument.description, description)
+  t.equal(argument.position, 0)
   t.end()
 })
 
@@ -69,15 +75,17 @@ test('argument with description', function (t) {
     argument1 + '=' + argumentDefaultValue + ' : ' + description
   ])
 
-  t.type(signature.args[argument1], 'object')
-  t.equal(signature.args[argument1].name, argument1)
-  t.type(signature.args[argument1].value, 'string')
-  t.type(signature.args[argument1].default, 'string')
-  t.type(signature.args[argument1].description, 'string')
-  t.equal(signature.args[argument1].description, description)
-  t.equal(signature.args[argument1].position, 0)
+  argument = signature.args[argument1]
 
-  t.equal(signature.args[argument1].default, argumentDefaultValue)
+  t.type(argument, 'object')
+  t.equal(argument.name, argument1)
+  t.type(argument.value, 'string')
+  t.type(argument.default, 'string')
+  t.type(argument.description, 'string')
+  t.equal(argument.description, description)
+  t.equal(argument.position, 0)
+
+  t.equal(argument.default, argumentDefaultValue)
 
   t.end()
 })
