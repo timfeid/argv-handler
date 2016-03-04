@@ -25,7 +25,7 @@ test('load signature module', function (t) {
 
 test('argument without default value', function (t) {
   signature = new Signature([
-    argument1
+    ' ' + argument1 + '   '
   ])
 
   argument = signature.args[argument1]
