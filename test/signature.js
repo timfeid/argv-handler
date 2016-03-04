@@ -1,6 +1,7 @@
 var tap = require('tap')
 , test = tap.test
 , signature
+, Signature
 , argument1 = 'pizza-man'
 , description = 'this is a description'
 , argumentDefaultValue = '123321'
@@ -11,13 +12,19 @@ var tap = require('tap')
 , option
 
 test('load signature module', function (t) {
-  signature = require('../lib/signature')
-  t.ok(signature, "object loaded")
+  Signature = require('../lib/signature')
+  t.ok(Signature, "object loaded")
+  t.end()
+})
+
+test('load signature module', function (t) {
+  signature = new Signature()
+  t.ok(Signature, "object loaded")
   t.end()
 })
 
 test('argument without default value', function (t) {
-  signature.set([
+  signature = new Signature([
     argument1
   ])
 
@@ -34,7 +41,7 @@ test('argument without default value', function (t) {
 })
 
 test('argument with default value', function (t) {
-  signature.set([
+  signature = new Signature([
     argument1 + ' = ' + argumentDefaultValue
   ])
 
@@ -54,7 +61,7 @@ test('argument with default value', function (t) {
 })
 
 test('argument with description', function (t) {
-  signature.set([
+  signature = new Signature([
     argument1 + ' : ' + description
   ])
 
@@ -71,7 +78,7 @@ test('argument with description', function (t) {
 })
 
 test('argument with description', function (t) {
-  signature.set([
+  signature = new Signature([
     argument1 + ' = ' + argumentDefaultValue + ' : ' + description
   ])
 
@@ -91,7 +98,7 @@ test('argument with description', function (t) {
 })
 
 test('switch option', function (t) {
-  signature.set([
+  signature = new Signature([
     '--' + option1
   ])
 
@@ -108,7 +115,7 @@ test('switch option', function (t) {
 })
 
 test('switch option with description', function (t) {
-  signature.set([
+  signature = new Signature([
     '--' + option1 + ' : ' + option1Description
   ])
 
@@ -125,7 +132,7 @@ test('switch option with description', function (t) {
 })
 
 test('switch option with shortcut', function (t) {
-  signature.set([
+  signature = new Signature([
     '--' + option1 + ' | ' + option1Shortcut
   ])
 
@@ -142,7 +149,7 @@ test('switch option with shortcut', function (t) {
 })
 
 test('switch option with shortcut and description', function (t) {
-  signature.set([
+  signature = new Signature([
     '--' + option1 + ' | ' + option1Shortcut + ' : ' + option1Description
   ])
 
@@ -159,7 +166,7 @@ test('switch option with shortcut and description', function (t) {
 })
 
 test('value option', function (t) {
-  signature.set([
+  signature = new Signature([
     '--' + option1 + ' = '
   ])
 
@@ -176,7 +183,7 @@ test('value option', function (t) {
 })
 
 test('value option with default value', function (t) {
-  signature.set([
+  signature = new Signature([
     '--' + option1 + ' = ' + optionDefaultValue
   ])
 
@@ -193,7 +200,7 @@ test('value option with default value', function (t) {
 })
 
 test('value option with default value and description', function (t) {
-  signature.set([
+  signature = new Signature([
     '--' + option1 + ' = ' + optionDefaultValue + ' : ' + option1Description
   ])
 
@@ -211,7 +218,7 @@ test('value option with default value and description', function (t) {
 
 
 test('value option & shortcut with', function (t) {
-  signature.set([
+  signature = new Signature([
     '--' + option1 + ' | ' + option1Shortcut + ' = '
   ])
 
@@ -228,7 +235,7 @@ test('value option & shortcut with', function (t) {
 })
 
 test('value option & shortcut with default value with', function (t) {
-  signature.set([
+  signature = new Signature([
     '--' + option1 + ' | ' + option1Shortcut + ' = ' + optionDefaultValue
   ])
 
@@ -245,7 +252,7 @@ test('value option & shortcut with default value with', function (t) {
 })
 
 test('value option & shortcut with default value and description with', function (t) {
-  signature.set([
+  signature = new Signature([
     '--' + option1 + ' | ' + option1Shortcut + ' = ' + optionDefaultValue + ' : ' + option1Description
   ])
 
