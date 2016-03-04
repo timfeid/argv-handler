@@ -1,10 +1,10 @@
 {
   "name": "mandator",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Mandate commands",
-  "main": "lib/command.js",
+  "main": "lib",
   "bin": {
-    "console": "./index.js"
+    "pizza": "./examples/pizza.js"
   },
   "scripts": {
     "test": "tap test/"
